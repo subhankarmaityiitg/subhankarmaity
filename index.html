@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Subhankar Maity | Research Scholar - IIT Guwahati</title>
+  <!-- Google Fonts: Lora for Serif Headings + Inter for Clean UI -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lora:wght@600;700&display=swap" rel="stylesheet">
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            serif: ['Lora', 'serif'],
+          },
+          colors: {
+            navyDeep: '#0f2544',
+            tealDeep: '#1b5e63',
+            pageBg: '#f3f6fa',
+            darkBg: '#0b1120',
+            darkCard: '#131c31',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    ::-webkit-scrollbar { width: 7px; height: 7px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 9999px; }
+    .dark ::-webkit-scrollbar-thumb { background: #334155; }
+
+    /* Sidebar Gradient matching reference design */
+    .profile-gradient {
+      background: linear-gradient(165deg, #102542 0%, #163b5c 52%, #1d6368 100%);
+    }
+
+    /* Card Top & Left Accent Borders */
+    .card-accent-blue { border-top: 3px solid #2563eb; border-left: 3px solid #2563eb; }
+    .card-accent-green { border-top: 3px solid #16a34a; border-left: 3px solid #16a34a; }
+    .card-accent-amber { border-top: 3px solid #d97706; }
+
+    /* Active Nav Pill */
+    .nav-pill.active {
+      background-color: #0f172a;
+      color: #ffffff;
+    }
+    .dark .nav-pill.active {
+      background-color: #3b82f6;
+      color: #ffffff;
+    }
+  </style>
+</head>
+<body class="bg-pageBg text-slate-800 dark:bg-darkBg dark:text-slate-100 font-sans antialiased transition-colors duration-200">
+
+  <!-- TOP NAVIGATION BAR -->
+  <header class="sticky top-0 z-50 bg-white/95 dark:bg-darkCard/95 backdrop-blur border-b border-slate-200/80 dark:border-slate-800">
+    <div class="max-w-[1380px] mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <!-- Left Mini Brand -->
+      <a href="#about" class="flex items-center gap-3">
+        <img src="profile.jpg" onerror="this.src='https://ui-avatars.com/api/?name=Subhankar+Maity&background=0f2544&color=fff&size=128'" alt="Subhankar Maity" class="w-9 h-9 rounded-lg object-cover border border-slate-200 dark:border-slate-700">
+        <div class="leading-tight">
+          <div class="font-serif font-bold text-sm text-slate-900 dark:text-white">Subhankar Maity</div>
+          <div class="text-[11px] text-slate-500 dark:text-slate-400">Research Scholar • IIT Guwahati</div>
+        </div>
+      </a>
+
+      <!-- Center Navigation Links -->
+      <nav id="navbar-links" class="hidden lg:flex items-center gap-1 text-xs font-medium text-slate-600 dark:text-slate-300">
+        <a href="#about" class="nav-pill active px-3.5 py-1.5 rounded-full transition">About</a>
+        <a href="#education" class="nav-pill px-3.5 py-1.5 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition">Education</a>
+        <a href="#experience" class="nav-pill px-3.5 py-1.5 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition">Projects & Internships</a>
+        <a href="#skills" class="nav-pill px-3.5 py-1.5 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition">Skills</a>
+        <a href="#publications" class="nav-pill px-3.5 py-1.5 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition">Publications</a>
+        <div class="relative group">
+          <button class="px-3.5 py-1.5 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition flex items-center gap-1">
+            More <i class="fa-solid fa-chevron-down text-[10px]"></i>
+          </button>
+          <div class="hidden group-hover:block absolute right-0 mt-1 w-52 bg-white dark:bg-darkCard rounded-xl shadow-lg border border-slate-200 dark:border-slate-700 py-1.5 z-50">
+            <a href="#updates" class="block px-4 py-2 text-xs hover:bg-slate-50 dark:hover:bg-slate-800">Conferences & Updates</a>
+            <a href="#awards" class="block px-4 py-2 text-xs hover:bg-slate-50 dark:hover:bg-slate-800">Awards & Fellowships</a>
+            <a href="#workshops" class="block px-4 py-2 text-xs hover:bg-slate-50 dark:hover:bg-slate-800">Workshops & Webinars</a>
+            <a href="#gallery" class="block px-4 py-2 text-xs hover:bg-slate-50 dark:hover:bg-slate-800">Research & Media Gallery</a>
+            <a href="#references" class="block px-4 py-2 text-xs hover:bg-slate-50 dark:hover:bg-slate-800">Academic References</a>
+            <a href="#contact" class="block px-4 py-2 text-xs hover:bg-slate-50 dark:hover:bg-slate-800">Contact Me</a>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Right Controls: Theme Toggle & Mobile Menu -->
+      <div class="flex items-center gap-2">
+        <button id="theme-toggle" aria-label="Toggle Dark Mode" class="w-9 h-9 rounded-full border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+          <i id="theme-icon" class="fa-solid fa-moon text-xs"></i>
+        </button>
+        <button id="mobile-menu-btn" aria-label="Menu" class="lg:hidden w-9 h-9 rounded-full border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-600 dark:text-slate-300">
+          <i class="fa-solid fa-bars text-xs"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown Nav -->
+    <div id="mobile-menu" class="hidden lg:hidden px-4 pb-4 pt-2 border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-darkCard space-y-1 text-xs font-medium">
+      <a href="#about" class="block px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">About</a>
+      <a href="#education" class="block px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">Education</a>
+      <a href="#experience" class="block px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">Projects & Internships</a>
+      <a href="#skills" class="block px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">Skills</a>
+      <a href="#publications" class="block px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">Publications</a>
+      <a href="#awards" class="block px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">Awards & Fellowships</a>
+      <a href="#workshops" class="block px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">Workshops & Webinars</a>
+      <a href="#contact" class="block px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">Contact</a>
+    </div>
+  </header>
+
+  <!-- MAIN TWO-COLUMN LAYOUT -->
+  <div class="max-w-[1380px] mx-auto px-4 sm:px-6 py-6 flex flex-col lg:flex-row gap-6 items-start">
+
+    <!-- LEFT STICKY PROFILE SIDEBAR -->
+    <aside class="w-full lg:w-[340px] xl:w-[360px] shrink-0 lg:sticky lg:top-22 profile-gradient text-white rounded-2xl p-6 shadow-md">
+      <!-- Framed Portrait (Upload your photo as profile.jpg) -->
+      <div class="w-44 h-48 mx-auto rounded-2xl overflow-hidden border-2 border-sky-400/50 shadow-lg bg-white">
+        <img src="profile.jpg" onerror="this.src='https://ui-avatars.com/api/?name=Subhankar+Maity&background=1e293b&color=ffffff&size=400'" alt="Subhankar Maity" class="w-full h-full object-cover object-top">
+      </div>
+
+      <!-- Status Pills -->
+      <div class="flex flex-wrap justify-center gap-2 mt-5">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-medium bg-white/10 border border-white/15">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Research Scholar
+        </span>
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-medium bg-white/10 border border-white/15">
+          <span class="w-1.5 h-1.5 rounded-full bg-sky-400"></span> M.Tech, B.Tech
+        </span>
+      </div>
+
+      <!-- Name & Role -->
+      <div class="text-center mt-3">
+        <h1 class="font-serif text-2xl sm:text-[26px] font-bold tracking-tight">Subhankar Maity</h1>
+        <p class="text-xs text-sky-100/90 mt-1.5 leading-relaxed">
+          Research Scholar, Department of Chemical Engineering<br>
+          <span class="text-sky-200/80">Indian Institute of Technology Guwahati</span>
+        </p>
+      </div>
+
+      <!-- Location, Email & Phone -->
+      <div class="mt-5 space-y-2 text-center text-xs text-sky-100/85">
+        <div class="flex items-center justify-center gap-1.5">
+          <i class="fa-solid fa-location-dot text-sky-300"></i>
+          <span>IIT Guwahati, Assam 781039, India</span>
+        </div>
+        <div class="flex items-center justify-center gap-1.5">
+          <i class="fa-solid fa-envelope text-sky-300"></i>
+          <a href="mailto:subhankar.maity@iitg.ac.in" class="hover:underline">subhankar.maity@iitg.ac.in</a>
+        </div>
+        <div class="flex items-center justify-center gap-1.5">
+          <i class="fa-solid fa-phone text-sky-300"></i>
+          <a href="tel:+919775072694" class="hover:underline">+91-9775072694</a>
+        </div>
+      </div>
+
+      <!-- Academic & Social Badges Grid -->
+      <div class="mt-6 flex flex-wrap justify-center gap-2">
+        <a href="#contact" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[11px] font-medium bg-white/10 hover:bg-white/20 border border-white/15 transition">
+          <i class="fa-solid fa-envelope text-rose-300"></i> Email
+        </a>
+        <a href="https://scholar.google.com" target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[11px] font-medium bg-white/10 hover:bg-white/20 border border-white/15 transition">
+          <i class="fa-solid fa-graduation-cap text-sky-300"></i> Google Scholar
+        </a>
+        <a href="https://orcid.org" target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[11px] font-medium bg-white/10 hover:bg-white/20 border border-white/15 transition">
+          <i class="fa-brands fa-orcid text-lime-300"></i> ORCID
+        </a>
+        <a href="https://linkedin.com" target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[11px] font-medium bg-white/10 hover:bg-white/20 border border-white/15 transition">
+          <i class="fa-brands fa-linkedin text-blue-300"></i> LinkedIn
+        </a>
+        <a href="https://www.scopus.com" target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[11px] font-medium bg-white/10 hover:bg-white/20 border border-white/15 transition">
+          <i class="fa-solid fa-book-open text-amber-300"></i> Scopus
+        </a>
+        <a href="https://www.researchgate.net" target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[11px] font-medium bg-white/10 hover:bg-white/20 border border-white/15 transition">
+          <i class="fa-brands fa-researchgate text-teal-300"></i> ResearchGate
+        </a>
+      </div>
+
+      <!-- Compact Personal Snapshot -->
+      <div class="mt-6 pt-4 border-t border-white/15 text-[11px] text-sky-100/80 space-y-1 text-center">
+        <div><strong>Languages:</strong> Bengali, English, Hindi</div>
+        <div><strong>Hometown:</strong> Tamluk, Purba Medinipur, WB 721137</div>
+      </div>
+    </aside>
+
+    <!-- RIGHT SCROLLABLE CONTENT COLUMN -->
+    <main class="flex-1 min-w-0 space-y-6">
+
+      <!-- 1. ABOUT / HERO CARD -->
+      <section id="about" class="scroll-mt-22 bg-white dark:bg-darkCard rounded-2xl p-6 sm:p-8 border border-slate-200/80 dark:border-slate-800 shadow-sm">
+        <h2 class="font-serif text-2xl sm:text-[26px] font-bold text-blue-700 dark:text-blue-400">
+          Hi, This is Subhankar
+        </h2>
+        <p class="mt-3 text-sm sm:text-[15px] text-slate-600 dark:text-slate-300 leading-relaxed">
+          I am a Research Scholar in the Department of Chemical Engineering at the <strong>Indian Institute of Technology Guwahati (IIT Guwahati)</strong> with a strong academic foundation in Food Engineering and Technology. My core research focuses on <strong>food processing technology, microwave curing of turmeric rhizomes, computer-aided image processing, drying technology, and functional food product development</strong>.
+        </p>
+        <!-- Research Focus Pills -->
+        <div class="mt-4 flex flex-wrap gap-2">
+          <span class="px-3 py-1 rounded-full text-xs font-medium bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300">Food Processing Technology</span>
+          <span class="px-3 py-1 rounded-full text-xs font-medium bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300">Microwave Curing of Turmeric</span>
+          <span class="px-3 py-1 rounded-full text-xs font-medium bg-amber-50 text-amber-700 dark:bg-amber-900/30 dark:text-amber-300">Image Processing</span>
+          <span class="px-3 py-1 rounded-full text-xs font-medium bg-purple-50 text-purple-700 dark:bg-purple-900/30 dark:text-purple-300">Drying Technology & Product Development</span>
+        </div>
+      </section>
+
+      <!-- 2. EDUCATION / ACADEMIC CREDENTIALS -->
+      <section id="education" class="scroll-mt-22 bg-white dark:bg-darkCard rounded-2xl p-6 sm:p-8 border border-slate-200/80 dark:border-slate-800 shadow-sm">
+        <div class="text-[11px] font-semibold uppercase tracking-wider text-blue-600 dark:text-blue-400">Academic Background</div>
+        <h2 class="font-serif text-2xl font-bold text-slate-900 dark:text-white mt-0.5">Academic Credentials</h2>
+
+        <div class="mt-6 space-y-5">
+          <!-- Current Research -->
+          <div class="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-6">
+            <div class="sm:w-28 shrink-0 text-xs font-semibold text-blue-600 dark:text-blue-400 pt-1">Present</div>
+            <div class="flex-1">
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-blue-600 shrink-0"></span>
+                <h3 class="font-serif font-bold text-base text-slate-900 dark:text-white">PhD Research Scholar — Chemical Engineering</h3>
+              </div>
+              <div class="pl-4.5 mt-1 space-y-1 text-xs text-slate-600 dark:text-slate-300">
+                <div class="font-medium text-slate-700 dark:text-slate-200">Indian Institute of Technology Guwahati (IIT Guwahati), Assam 781039</div>
+                <p class="text-slate-500 dark:text-slate-400">Department of Chemical Engineering • Food Processing, Drying Kinetics & Product Development</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 1. M.Tech -->
+          <div class="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-6">
+            <div class="sm:w-28 shrink-0 text-xs font-semibold text-emerald-600 dark:text-emerald-400 pt-1">2023 – 2025</div>
+            <div class="flex-1">
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-emerald-600 shrink-0"></span>
+                <h3 class="font-serif font-bold text-base text-slate-900 dark:text-white">M.Tech in Food Engineering and Technology</h3>
+              </div>
+              <div class="pl-4.5 mt-1 space-y-1 text-xs text-slate-600 dark:text-slate-300">
+                <div class="font-medium text-slate-700 dark:text-slate-200">Tezpur University, Assam</div>
+                <p class="text-slate-500 dark:text-slate-400">Thesis: Development of Microwave-Assisted Process Technology and Valorisation of Turmeric Rhizome (<em>Curcuma Longa</em> L.)</p>
+                <div class="font-semibold text-slate-700 dark:text-slate-200">CGPA: 8.63 / 10.00</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. B.Tech -->
+          <div class="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-6">
+            <div class="sm:w-28 shrink-0 text-xs font-semibold text-blue-600 dark:text-blue-400 pt-1">2020 – 2023</div>
+            <div class="flex-1">
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-blue-600 shrink-0"></span>
+                <h3 class="font-serif font-bold text-base text-slate-900 dark:text-white">B.Tech (Lateral) in Food Technology</h3>
+              </div>
+              <div class="pl-4.5 mt-1 space-y-1 text-xs text-slate-600 dark:text-slate-300">
+                <div class="font-medium text-slate-700 dark:text-slate-200">Ghani Khan Choudhury Institute of Engineering and Technology (GKCIET)</div>
+                <p class="text-slate-500 dark:text-slate-400">A Centrally Funded Technical Institute (CFTI) under Ministry of Education, Govt. of India</p>
+                <div class="font-semibold text-slate-700 dark:text-slate-200">CGPA: 9.53 / 10.00</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. Diploma -->
+          <div class="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-6">
+            <div class="sm:w-28 shrink-0 text-xs font-semibold text-emerald-600 dark:text-emerald-400 pt-1">2017 – 2020</div>
+            <div class="flex-1">
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-emerald-600 shrink-0"></span>
+                <h3 class="font-serif font-bold text-base text-slate-900 dark:text-white">Diploma in Food Processing Technology</h3>
+              </div>
+              <div class="pl-4.5 mt-1 space-y-1 text-xs text-slate-600 dark:text-slate-300">
+                <div class="font-medium text-slate-700 dark:text-slate-200">West Bengal State Council of Technical & Vocational Education and Skill Development (WBSCTVESD)</div>
+                <div class="font-semibold text-slate-700 dark:text-slate-200">CGPA: 8.90 / 10.00</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Collapsible School Credentials (10+2 & 10th) -->
+          <div id="more-edu" class="hidden space-y-5 pt-2 border-t border-slate-100 dark:border-slate-800">
+            <!-- 4. Higher Secondary -->
+            <div class="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-6">
+              <div class="sm:w-28 shrink-0 text-xs font-semibold text-blue-600 dark:text-blue-400 pt-1">2017</div>
+              <div class="flex-1">
+                <div class="flex items-center gap-2">
+                  <span class="w-2.5 h-2.5 rounded-full bg-blue-600 shrink-0"></span>
+                  <h3 class="font-serif font-bold text-base text-slate-900 dark:text-white">Higher Secondary (10+2)</h3>
+                </div>
+                <div class="pl-4.5 mt-1 space-y-1 text-xs text-slate-600 dark:text-slate-300">
+                  <div class="font-medium text-slate-700 dark:text-slate-200">West Bengal Council of Higher Secondary Education</div>
+                  <p class="text-slate-500 dark:text-slate-400">Subjects: Bengali, English, Chemistry, Mathematics, Physics, Biology</p>
+                  <div class="font-semibold text-slate-700 dark:text-slate-200">Score: 69.4%</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 5. Secondary -->
+            <div class="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-6">
+              <div class="sm:w-28 shrink-0 text-xs font-semibold text-emerald-600 dark:text-emerald-400 pt-1">2015</div>
+              <div class="flex-1">
+                <div class="flex items-center gap-2">
+                  <span class="w-2.5 h-2.5 rounded-full bg-emerald-600 shrink-0"></span>
+                  <h3 class="font-serif font-bold text-base text-slate-900 dark:text-white">Secondary Examination (10th)</h3>
+                </div>
+                <div class="pl-4.5 mt-1 space-y-1 text-xs text-slate-600 dark:text-slate-300">
+                  <div class="font-medium text-slate-700 dark:text-slate-200">West Bengal Board of Secondary Education</div>
+                  <p class="text-slate-500 dark:text-slate-400">Subjects: Bengali, English, Mathematics, Physical Science, Life Science, History, Geography</p>
+                  <div class="font-semibold text-slate-700 dark:text-slate-200">Score: 79.28%</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-2 text-center">
+            <button id="toggle-edu-btn" class="px-4 py-1.5 rounded-full text-xs font-medium border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+              See all
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. RESEARCH PROJECTS, INDUSTRIAL INTERNSHIPS & STATS BAR -->
+      <section id="experience" class="scroll-mt-22 bg-white dark:bg-darkCard rounded-2xl p-6 sm:p-8 border border-slate-200/80 dark:border-slate-800 shadow-sm">
+        <div class="text-[11px] font-semibold uppercase tracking-wider text-blue-600 dark:text-blue-400">Research & Industrial Trajectory</div>
+        <h2 class="font-serif text-2xl font-bold text-slate-900 dark:text-white mt-0.5">Research Projects & Industrial Training</h2>
+
+        <div class="mt-6 space-y-4">
+          <!-- Project 1: M.Tech Research -->
+          <div class="rounded-xl border border-slate-200 dark:border-slate-700 p-5 card-accent-blue bg-slate-50/40 dark:bg-slate-800/30">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <h3 class="font-serif font-bold text-base text-slate-900 dark:text-white">
+                Development of Microwave-Assisted Process Technology and Valorisation of Turmeric Rhizome (<em>Curcuma Longa</em> L.)
+              </h3>
+              <span class="px-2.5 py-0.5 rounded-full text-[11px] font-medium bg-blue-50 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300">M.Tech Research Project</span>
+            </div>
+            <div class="mt-2 flex flex-wrap items-center gap-3 text-xs">
+              <span class="font-semibold text-blue-600 dark:text-blue-400">2023 – 2025</span>
+              <span class="flex items-center gap-2 font-bold text-slate-800 dark:text-slate-100">
+                <span class="w-2 h-2 rounded-full bg-blue-600"></span> Tezpur University
+              </span>
+            </div>
+            <ul class="mt-2.5 space-y-1 text-xs text-slate-600 dark:text-slate-300 list-disc pl-5">
+              <li>Standardization of microwave curing process on a pilot-scale basis.</li>
+              <li>Study of the efficacy of microwave curing process using advanced image processing techniques.</li>
+              <li>Investigation of hybrid drying behavior of microwave-cured turmeric rhizomes.</li>
+            </ul>
+          </div>
+
+          <!-- Internship 1: Keventer Agro Ltd. -->
+          <div class="rounded-xl border border-slate-200 dark:border-slate-700 p-5 card-accent-green bg-slate-50/40 dark:bg-slate-800/30">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <h3 class="font-serif font-bold text-base text-slate-900 dark:text-white">
+                Keventer Agro Ltd., Kolkata
+              </h3>
+              <span class="px-2.5 py-0.5 rounded-full text-[11px] font-medium bg-emerald-50 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300">Industrial Training & B.Tech Project</span>
+            </div>
+            <div class="mt-2 flex flex-wrap items-center gap-3 text-xs">
+              <span class="font-semibold text-emerald-600 dark:text-emerald-400">B.Tech Training</span>
+              <span class="flex items-center gap-2 font-bold text-slate-800 dark:text-slate-100">
+                <span class="w-2 h-2 rounded-full bg-emerald-600"></span> Graduate Engineer Trainee
+              </span>
+            </div>
+            <p class="mt-2 text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+              Hands-on training and experiential learning on process and quality analysis of Frooti (mango drink), conducting quality evaluations for raw and processed products, and monitoring the overall processing line at the Frooti division.
+            </p>
+          </div>
+
+          <!-- Internship 2 & 3 + Diploma Project -->
+          <div id="more-exp" class="hidden space-y-4">
+            <!-- Sukhjit Starch Industry -->
+            <div class="rounded-xl border border-slate-200 dark:border-slate-700 p-5 card-accent-blue bg-slate-50/40 dark:bg-slate-800/30">
+              <div class="flex flex-wrap items-center justify-between gap-2">
+                <h3 class="font-serif font-bold text-base text-slate-900 dark:text-white">Sukhjit Starch Industry, Malda</h3>
+                <span class="px-2.5 py-0.5 rounded-full text-[11px] font-medium bg-blue-50 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300">Industrial Internship</span>
+              </div>
+              <p class="mt-2 text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                Gained operational knowledge of maize starch, liquid glucose, dextrose monohydrate, and by-product processing through to final quality evaluation.
+              </p>
+            </div>
+
+            <!-- Sakambari Processors Pvt. Ltd. -->
+            <div class="rounded-xl border border-slate-200 dark:border-slate-700 p-5 card-accent-green bg-slate-50/40 dark:bg-slate-800/30">
+              <div class="flex flex-wrap items-center justify-between gap-2">
+                <h3 class="font-serif font-bold text-base text-slate-900 dark:text-white">Sakambari Processors Pvt. Ltd.</h3>
+                <span class="px-2.5 py-0.5 rounded-full text-[11px] font-medium bg-emerald-50 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300">Industrial Internship</span>
+              </div>
+              <p class="mt-2 text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                Acquired hands-on exposure from raw material processing to packaging and quality evaluation of snack biscuits.
+              </p>
+            </div>
+
+            <!-- Diploma Project & Industrial Visits -->
+            <div class="rounded-xl border border-slate-200 dark:border-slate-700 p-5 card-accent-blue bg-slate-50/40 dark:bg-slate-800/30">
+              <div class="flex flex-wrap items-center justify-between gap-2">
+                <h3 class="font-serif font-bold text-base text-slate-900 dark:text-white">Diploma Product Development & Industrial Visits</h3>
+                <span class="px-2.5 py-0.5 rounded-full text-[11px] font-medium bg-blue-50 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300">2017 – 2020</span>
+              </div>
+              <ul class="mt-2 space-y-1 text-xs text-slate-600 dark:text-slate-300 list-disc pl-5">
+                <li><strong>Diploma Project:</strong> Development of Herbal Bread fortified with holy basil leaves (<em>Ocimum tenuiflorum</em>).</li>
+                <li><strong>Industrial Visits:</strong> One-day plant visits at SB Beverages Aquasure Drinking Water Plant (Murshidabad, WB) and Domkal Chilling Plant (Domkal, WB).</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="pt-1 text-center">
+            <button id="toggle-exp-btn" class="px-4 py-1.5 rounded-full text-xs font-medium border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+              See all
+            </button>
+          </div>
+        </div>
+
+        <!-- 4-Column Metric Summary Strip -->
+        <div class="mt-6 grid grid-cols-2 sm:grid-cols-4 rounded-xl border border-slate-200 dark:border-slate-700 divide-y sm:divide-y-0 sm:divide-x divide-slate-200 dark:divide-slate-700 bg-white dark:bg-darkCard">
+          <div class="p-4 text-center">
+            <div class="font-serif text-2xl font-bold text-blue-600 dark:text-blue-400">504</div>
+            <div class="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">GATE-2024 (XL) Score</div>
+          </div>
+          <div class="p-4 text-center">
+            <div class="font-serif text-2xl font-bold text-blue-600 dark:text-blue-400">3</div>
+            <div class="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">Industrial Internships</div>
+          </div>
+          <div class="p-4 text-center">
+            <div class="font-serif text-2xl font-bold text-blue-600 dark:text-blue-400">11+</div>
+            <div class="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">Workshops & Webinars</div>
+          </div>
+          <div class="p-4 text-center">
+            <div class="font-serif text-2xl font-bold text-blue-600 dark:text-blue-400">9.53</div>
+            <div class="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">B.Tech CGPA (CFTI)</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. TECHNICAL CAPABILITIES (2-COLUMN SPLIT FROM CV) -->
+      <section id="skills" class="scroll-mt-22 bg-white dark:bg-darkCard rounded-2xl p-6 sm:p-8 border border-slate-200/80 dark:border-slate-800 shadow-sm">
+        <div class="text-[11px] font-semibold uppercase tracking-wider text-blue-600 dark:text-blue-400">Core Expertise</div>
+        <h2 class="font-serif text-2xl font-bold text-slate-900 dark:text-white mt-0.5">Technical Capabilities</h2>
+
+        <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-5">
+          <!-- Instruments Handling Skills -->
+          <div class="rounded-xl border border-slate-200 dark:border-slate-700 p-5 border-t-[3px] border-t-blue-600">
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-lg bg-blue-50 dark:bg-blue-900/40 text-blue-600 dark:text-blue-400 flex items-center justify-center">
+                <i class="fa-solid fa-microscope"></i>
+              </div>
+              <div>
+                <h3 class="font-serif font-bold text-base text-slate-900 dark:text-white">Instruments Handling Skills</h3>
+                <p class="text-[11px] text-slate-500 dark:text-slate-400">Rheology, Drying & Analytical Characterization</p>
+              </div>
+            </div>
+            <ul class="mt-4 space-y-3 text-xs text-slate-600 dark:text-slate-300">
+              <li class="flex items-start gap-2">
+                <span class="w-2 h-2 rounded-full bg-blue-600 mt-1.5 shrink-0"></span>
+                <span><strong class="text-slate-800 dark:text-slate-100">Rheological & Textural Profiling:</strong> Rheometer, Viscometer, and Texture Analyzer.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="w-2 h-2 rounded-full bg-blue-600 mt-1.5 shrink-0"></span>
+                <span><strong class="text-slate-800 dark:text-slate-100">Thermal & Drying Equipment:</strong> Microwave instruments, Microwave dryer, Tray dryer, Cabinet tray dryer, Spray dryer, Baking oven, Hot air oven, and Muffle furnace.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="w-2 h-2 rounded-full bg-blue-600 mt-1.5 shrink-0"></span>
+                <span><strong class="text-slate-800 dark:text-slate-100">Optical & Physicochemical Instruments:</strong> Spectrophotometers, Hunter Lab Colorimeter, Centrifuge, Brix meter, and Moisture Analyzer.</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Software & Computational Skills -->
+          <div class="rounded-xl border border-slate-200 dark:border-slate-700 p-5 border-t-[3px] border-t-emerald-600">
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-lg bg-emerald-50 dark:bg-emerald-900/40 text-emerald-600 dark:text-emerald-400 flex items-center justify-center">
+                <i class="fa-solid fa-laptop-code"></i>
+              </div>
+              <div>
+                <h3 class="font-serif font-bold text-base text-slate-900 dark:text-white">Software & Programming Skills</h3>
+                <p class="text-[11px] text-slate-500 dark:text-slate-400">Simulation, Statistical Design & Documentation</p>
+              </div>
+            </div>
+            <ul class="mt-4 space-y-3 text-xs text-slate-600 dark:text-slate-300">
+              <li class="flex items-start gap-2">
+                <span class="w-2 h-2 rounded-full bg-emerald-600 mt-1.5 shrink-0"></span>
+                <span><strong class="text-slate-800 dark:text-slate-100">Programming & Image Processing:</strong> MATLAB Programming (image processing & process modeling) and HTML.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="w-2 h-2 rounded-full bg-emerald-600 mt-1.5 shrink-0"></span>
+                <span><strong class="text-slate-800 dark:text-slate-100">Statistical & Experimental Design:</strong> Design-Expert (RSM/DoE), SPSS, and OriginPro.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="w-2 h-2 rounded-full bg-emerald-600 mt-1.5 shrink-0"></span>
+                <span><strong class="text-slate-800 dark:text-slate-100">Research & Media Tools:</strong> Mendeley, Zotero, MS Office Suite (Word, Excel, PowerPoint), Data Recovery, and Image/Video Editing.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. PUBLICATIONS & BOOK CHAPTERS -->
+      <section id="publications" class="scroll-mt-22 bg-white dark:bg-darkCard rounded-2xl p-6 sm:p-8 border border-slate-200/80 dark:border-slate-800 shadow-sm">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div>
+            <div class="text-[11px] font-semibold uppercase tracking-wider text-blue-600 dark:text-blue-400">Scholarly Output</div>
+            <h2 class="font-serif text-2xl font-bold text-slate-900 dark:text-white mt-0.5">Publications & Conference Papers</h2>
+          </div>
+          <!-- Live Search Input -->
+          <div class="relative w-full sm:w-64">
+            <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-xs"></i>
+            <input id="pub-search" type="text" placeholder="Search title, publisher, or topic..." class="w-full pl-9 pr-3 py-2 text-xs rounded-full border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-blue-500">
+          </div>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="mt-4 flex flex-wrap gap-2">
+          <button data-pub-filter="all" class="pub-filter-btn active px-3.5 py-1.5 rounded-full text-xs font-medium bg-slate-900 text-white dark:bg-blue-600">All Outputs</button>
+          <button data-pub-filter="chapter" class="pub-filter-btn px-3.5 py-1.5 rounded-full text-xs font-medium bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-300 hover:bg-slate-200">Book Chapters</button>
+          <button data-pub-filter="conference" class="pub-filter-btn px-3.5 py-1.5 rounded-full text-xs font-medium bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-300 hover:bg-slate-200">Conference Presentations</button>
+        </div>
+
+        <!-- Publication Cards List -->
+        <div id="pub-list" class="mt-6 space-y-4">
+          <!-- Book Chapter (2026) -->
+          <article data-status="chapter" class="pub-item rounded-xl border border-slate-200 dark:border-slate-700 p-5 border-l-[3px] border-l-emerald-600 flex flex-col sm:flex-row gap-4">
+            <div class="sm:w-20 shrink-0">
+              <div class="font-serif text-xl font-bold text-slate-300 dark:text-slate-600">2026</div>
+              <div class="text-[11px] font-medium text-slate-400">Springer</div>
+            </div>
+            <div class="flex-1">
+              <div class="flex flex-wrap items-center justify-between gap-2">
+                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-50 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300">Book Chapter • Published</span>
+                <span class="px-2.5 py-0.5 rounded border border-slate-200 dark:border-slate-700 text-[10px] text-slate-500">pp. 25–38 • Cham: Springer Nature Switzerland</span>
+              </div>
+              <h3 class="font-serif font-bold text-sm sm:text-base text-slate-900 dark:text-white mt-2">
+                Process Control and Operations for Microfluidization
+              </h3>
+              <p class="text-xs text-slate-600 dark:text-slate-300 mt-1.5">
+                Kumar, M., <strong class="underline decoration-emerald-500">Maity, S.</strong>, Prabhakar, P. K., & Srivastava, B. (2026)
+              </p>
+              <p class="text-xs italic text-slate-500 dark:text-slate-400 mt-1">
+                In: Fundamentals and Application of Microfluidization in Food Processing: Emulsion formation, bioactive encapsulation, and beverage stabilization (pp. 25–38). Springer Nature Switzerland.
+              </p>
+            </div>
+          </article>
+
+          <!-- Conference Poster Presentation (2025) -->
+          <article data-status="conference" class="pub-item rounded-xl border border-slate-200 dark:border-slate-700 p-5 border-l-[3px] border-l-blue-600 flex flex-col sm:flex-row gap-4">
+            <div class="sm:w-20 shrink-0">
+              <div class="font-serif text-xl font-bold text-slate-300 dark:text-slate-600">2025</div>
+              <div class="text-[11px] font-medium text-slate-400">13–15 Feb</div>
+            </div>
+            <div class="flex-1">
+              <div class="flex flex-wrap items-center justify-between gap-2">
+                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-blue-50 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300">Conference Poster Presentation</span>
+                <span class="px-2.5 py-0.5 rounded border border-slate-200 dark:border-slate-700 text-[10px] text-slate-500">ET-SAFe-2025 • Tezpur University</span>
+              </div>
+              <h3 class="font-serif font-bold text-sm sm:text-base text-slate-900 dark:text-white mt-2">
+                Evaluating the Efficacy of Microwave and Conventional Curing of Turmeric Rhizomes Using Advanced Image Processing Techniques
+              </h3>
+              <p class="text-xs text-slate-600 dark:text-slate-300 mt-1.5">
+                <strong class="underline decoration-blue-500">Maity, S.</strong>
+              </p>
+              <p class="text-xs italic text-slate-500 dark:text-slate-400 mt-1">
+                National Conference on Emerging Technologies for Sustainable Agro-Food-Bio Systems (ET-SAFe-2025), Dept. of Food Engineering and Technology, Tezpur University.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 6. RECENT UPDATES & CONFERENCES -->
+      <section id="updates" class="scroll-mt-22 bg-white dark:bg-darkCard rounded-2xl p-6 sm:p-8 border border-slate-200/80 dark:border-slate-800 shadow-sm">
+        <div class="text-[11px] font-semibold uppercase tracking-wider text-blue-600 dark:text-blue-400">Direction & Milestones</div>
+        <h2 class="font-serif text-2xl font-bold text-slate-900 dark:text-white mt-0.5">Recent Updates & Conferences</h2>
+
+        <div class="mt-5 rounded-xl border border-slate-200 dark:border-slate-700 p-5 card-accent-amber">
+          <div class="flex items-center gap-2 text-xs font-bold text-amber-700 dark:text-amber-400 mb-4">
+            <i class="fa-solid fa-clock-rotate-left"></i> Academic Timeline
+          </div>
+          <div class="space-y-3 text-xs">
+            <div class="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-6">
+              <span class="w-28 shrink-0 font-semibold text-amber-600 dark:text-amber-400">March 2026</span>
+              <span class="text-slate-700 dark:text-slate-200">Attended One-Day Workshop on “Dynamic Light Scattering (DLS)” organized by Jyoti and Bhupat Mehta School of Health Sciences and Technology, IIT Guwahati.</span>
+            </div>
+            <div class="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-6">
+              <span class="w-28 shrink-0 font-semibold text-amber-600 dark:text-amber-400">2026</span>
+              <span class="text-slate-700 dark:text-slate-200">Published Springer book chapter <em>“Process Control and Operations for Microfluidization”</em> in <em>Fundamentals and Application of Microfluidization in Food Processing</em>.</span>
+            </div>
+            <div class="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-6">
+              <span class="w-28 shrink-0 font-semibold text-amber-600 dark:text-amber-400">February 2025</span>
+              <span class="text-slate-700 dark:text-slate-200">Presented poster on microwave vs. conventional turmeric curing via image processing and won 1st place in Logo/Souvenir/Banner design + Runner-up in Quiz at ET-SAFe-2025, Tezpur University.</span>
+            </div>
+            <div class="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-6">
+              <span class="w-28 shrink-0 font-semibold text-amber-600 dark:text-amber-400">2024</span>
+              <span class="text-slate-700 dark:text-slate-200">Qualified GATE-2024 in Life Science (XL) with a score of 504.</span>
+            </div>
+            <div class="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-6">
+              <span class="w-28 shrink-0 font-semibold text-amber-600 dark:text-amber-400">2022</span>
+              <span class="text-slate-700 dark:text-slate-200">Attended International Conference on Emerging Technologies in Food Processing-II (ETFP-II 2022) organized by Dept. of Food Processing Technology, GKCIET Malda.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. AWARDS, ACHIEVEMENTS & FELLOWSHIPS -->
+      <section id="awards" class="scroll-mt-22 bg-white dark:bg-darkCard rounded-2xl p-6 sm:p-8 border border-slate-200/80 dark:border-slate-800 shadow-sm">
+        <div class="text-[11px] font-semibold uppercase tracking-wider text-blue-600 dark:text-blue-400">Honors & Recognition</div>
+        <h2 class="font-serif text-2xl font-bold text-slate-900 dark:text-white mt-0.5">Awards, Achievements & Fellowships</h2>
+
+        <div class="mt-5 grid grid-cols-1 md:grid-cols-2 gap-4">
+          <!-- Award 1: GATE 2024 -->
+          <div class="rounded-xl border border-slate-200 dark:border-slate-700 p-5 card-accent-amber">
+            <div class="flex items-start gap-3">
+              <div class="w-9 h-9 rounded-lg bg-amber-600 text-white flex items-center justify-center shrink-0">
+                <i class="fa-solid fa-award"></i>
+              </div>
+              <div>
+                <div class="text-[11px] font-semibold text-amber-600">2024 • National Qualification</div>
+                <h3 class="font-serif font-bold text-sm text-slate-900 dark:text-white mt-0.5">GATE-2024 Qualified — Life Science (XL)</h3>
+                <p class="text-xs text-slate-600 dark:text-slate-300 mt-1.5">Qualified Graduate Aptitude Test in Engineering (GATE-2024) in Life Science (XL) stream with a score of <strong>504</strong>.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Award 2: ET-SAFe 2025 Design -->
+          <div class="rounded-xl border border-slate-200 dark:border-slate-700 p-5 card-accent-amber">
+            <div class="flex items-start gap-3">
+              <div class="w-9 h-9 rounded-lg bg-amber-600 text-white flex items-center justify-center shrink-0">
+                <i class="fa-solid fa-trophy"></i>
+              </div>
+              <div>
+                <div class="text-[11px] font-semibold text-amber-600">13–15 February 2025 • 1st Place</div>
+                <h3 class="font-serif font-bold text-sm text-slate-900 dark:text-white mt-0.5">1st Place — Logo, Souvenir Cover & Banner Design</h3>
+                <p class="text-xs text-slate-600 dark:text-slate-300 mt-1.5">National Conference on Emerging Technologies for Sustainable Agro-Food-Bio Systems (ET-SAFe-2025), Tezpur University.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Award 3: ET-SAFe 2025 Quiz -->
+          <div class="rounded-xl border border-slate-200 dark:border-slate-700 p-5 card-accent-amber">
+            <div class="flex items-start gap-3">
+              <div class="w-9 h-9 rounded-lg bg-amber-600 text-white flex items-center justify-center shrink-0">
+                <i class="fa-solid fa-medal"></i>
+              </div>
+              <div>
+                <div class="text-[11px] font-semibold text-amber-600">13–15 February 2025 • Runner-Up</div>
+                <h3 class="font-serif font-bold text-sm text-slate-900 dark:text-white mt-0.5">Runner-Up — National Conference Quiz Competition</h3>
+                <p class="text-xs text-slate-600 dark:text-slate-300 mt-1.5">Secured Runner-Up position in Quiz Competition at ET-SAFe-2025, Dept. of Food Engineering and Technology, Tezpur University.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Award 4: AKS University Quiz -->
+          <div class="rounded-xl border border-slate-200 dark:border-slate-700 p-5 card-accent-amber">
+            <div class="flex items-start gap-3">
+              <div class="w-9 h-9 rounded-lg bg-amber-600 text-white flex items-center justify-center shrink-0">
+                <i class="fa-solid fa-trophy"></i>
+              </div>
+              <div>
+                <div class="text-[11px] font-semibold text-amber-600">World Food Day 2021 • 1st Place</div>
+                <h3 class="font-serif font-bold text-sm text-slate-900 dark:text-white mt-0.5">1st Place — National Quiz Competition</h3>
+                <p class="text-xs text-slate-600 dark:text-slate-300 mt-1.5">Organized by Department of Food Technology, AKS University during World Food Day 2021.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Fellowship 1: SVMCM -->
+          <div class="rounded-xl border border-slate-200 dark:border-slate-700 p-5 border-l-[3px] border-l-blue-600">
+            <div class="flex items-center justify-between">
+              <h3 class="font-serif font-bold text-sm text-slate-900 dark:text-white">Swami Vivekananda Merit-cum-Means (SVMCM) Scholarship</h3>
+              <span class="px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-blue-50 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300">3 Years (B.Tech)</span>
+            </div>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1.5">Awarded for 3 consecutive years during B.Tech in Food Technology for academic excellence.</p>
+          </div>
+
+          <!-- Fellowship 2: Bikash Bhavan -->
+          <div class="rounded-xl border border-slate-200 dark:border-slate-700 p-5 border-l-[3px] border-l-emerald-600">
+            <div class="flex items-center justify-between">
+              <h3 class="font-serif font-bold text-sm text-slate-900 dark:text-white">Bikash Bhavan Merit Scholarship</h3>
+              <span class="px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-50 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300">2 Years (10+2)</span>
+            </div>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1.5">Awarded for 2 years during Higher Secondary education by the Government of West Bengal.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 8. WORKSHOPS, SEMINARS & WEBINARS -->
+      <section id="workshops" class="scroll-mt-22 bg-white dark:bg-darkCard rounded-2xl p-6 sm:p-8 border border-slate-200/80 dark:border-slate-800 shadow-sm">
+        <div class="text-[11px] font-semibold uppercase tracking-wider text-blue-600 dark:text-blue-400">Continuous Learning</div>
+        <h2 class="font-serif text-2xl font-bold text-slate-900 dark:text-white mt-0.5">Workshops, Seminars & Webinars</h2>
+
+        <div class="mt-5 space-y-3 text-xs">
+          <!-- Item 1 -->
+          <div class="rounded-xl border border-slate-200 dark:border-slate-700 p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <div>
+              <h3 class="font-bold text-slate-900 dark:text-white">One-Day Workshop on “Dynamic Light Scattering (DLS)”</h3>
+              <p class="text-slate-500 dark:text-slate-400 mt-0.5">Jyoti and Bhupat Mehta School of Health Sciences and Technology, IIT Guwahati</p>
+            </div>
+            <span class="shrink-0 px-3 py-1 rounded-full text-[11px] font-semibold bg-blue-50 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300">30 March 2026</span>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="rounded-xl border border-slate-200 dark:border-slate-700 p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <div>
+              <h3 class="font-bold text-slate-900 dark:text-white">5-Day Online Workshop on “Emerging Technologies and AI Applications in Food Technology, Nutrition, Safety and Health Research”</h3>
+              <p class="text-slate-500 dark:text-slate-400 mt-0.5">Royal Global University</p>
+            </div>
+            <span class="shrink-0 px-3 py-1 rounded-full text-[11px] font-semibold bg-blue-50 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300">9–13 Feb 2026</span>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="rounded-xl border border-slate-200 dark:border-slate-700 p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <div>
+              <h3 class="font-bold text-slate-900 dark:text-white">5-Day Hands-On Workshop on “Bioprocess Modelling and Simulation Using MathWorks”</h3>
+              <p class="text-slate-500 dark:text-slate-400 mt-0.5">SRM Institute of Science and Technology, Tiruchirappalli in Collaboration with MathWorks</p>
+            </div>
+            <span class="shrink-0 px-3 py-1 rounded-full text-[11px] font-semibold bg-emerald-50 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300">15–24 April 2025</span>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="rounded-xl border border-slate-200 dark:border-slate-700 p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <div>
+              <h3 class="font-bold text-slate-900 dark:text-white">Webinar on “General Awareness of the PMFME Scheme”</h3>
+              <p class="text-slate-500 dark:text-slate-400 mt-0.5">Project Management Unit (PMU)-PMFME, NIFTEM-K (MOFPI, Govt. of India)</p>
+            </div>
+            <span class="shrink-0 px-3 py-1 rounded-full text-[11px] font-semibold bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300">2 May 2025</span>
+          </div>
+
+          <!-- Item 5 -->
+          <div class="rounded-xl border border-slate-200 dark:border-slate-700 p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <div>
+              <h3 class="font-bold text-slate-900 dark:text-white">Webinar on “Preparedness for FSSAI's Regulatory Inspections – Do’s and Don’ts”</h3>
+              <p class="text-slate-500 dark:text-slate-400 mt-0.5">International Training Centre Food Safety & Applied Nutrition (ITCFSAN)</p>
+            </div>
+            <span class="shrink-0 px-3 py-1 rounded-full text-[11px] font-semibold bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300">29 March 2025</span>
+          </div>
+
+          <!-- Hidden Additional Webinars (2020 - 2023) -->
+          <div id="more-workshops" class="hidden space-y-3">
+            <div class="rounded-xl border border-slate-200 dark:border-slate-700 p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+              <div>
+                <h3 class="font-bold text-slate-900 dark:text-white">Webinar on “Online Students Research Article Presentation”</h3>
+                <p class="text-slate-500 dark:text-slate-400 mt-0.5">Maulana Abul Kalam Azad University of Technology, West Bengal</p>
+              </div>
+              <span class="shrink-0 px-3 py-1 rounded-full text-[11px] font-semibold bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300">9 March 2023</span>
+            </div>
+
+            <div class="rounded-xl border border-slate-200 dark:border-slate-700 p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+              <div>
+                <h3 class="font-bold text-slate-900 dark:text-white">Webinar on “Food Fraud & its Prevention”</h3>
+                <p class="text-slate-500 dark:text-slate-400 mt-0.5">Food Industry Capacity and Skill Initiative (FICSI)</p>
+              </div>
+              <span class="shrink-0 px-3 py-1 rounded-full text-[11px] font-semibold bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300">7 October 2021</span>
+            </div>
+
+            <div class="rounded-xl border border-slate-200 dark:border-slate-700 p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+              <div>
+                <h3 class="font-bold text-slate-900 dark:text-white">Smart Talk on “Role of Skill Development in Food and Allied Industry”</h3>
+                <p class="text-slate-500 dark:text-slate-400 mt-0.5">Smart Management Consultancy</p>
+              </div>
+              <span class="shrink-0 px-3 py-1 rounded-full text-[11px] font-semibold bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300">9 September 2021</span>
+            </div>
+
+            <div class="rounded-xl border border-slate-200 dark:border-slate-700 p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+              <div>
+                <h3 class="font-bold text-slate-900 dark:text-white">National Webinar on “Improving the Nutrition Quality of Milk through Fortification”</h3>
+                <p class="text-slate-500 dark:text-slate-400 mt-0.5">Global Alliance for Improved Nutrition (GAIN), India (World Milk Day)</p>
+              </div>
+              <span class="shrink-0 px-3 py-1 rounded-full text-[11px] font-semibold bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300">1 June 2021</span>
+            </div>
+
+            <div class="rounded-xl border border-slate-200 dark:border-slate-700 p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+              <div>
+                <h3 class="font-bold text-slate-900 dark:text-white">Webinar on “Superheated Steam Drying: Role in Food Preservation and Food Security”</h3>
+                <p class="text-slate-500 dark:text-slate-400 mt-0.5">Department of Food Science and Technology, NIFTEM-K</p>
+              </div>
+              <span class="shrink-0 px-3 py-1 rounded-full text-[11px] font-semibold bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300">13 March 2021</span>
+            </div>
+
+            <div class="rounded-xl border border-slate-200 dark:border-slate-700 p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+              <div>
+                <h3 class="font-bold text-slate-900 dark:text-white">Webinar on “Food Safety, Nutrition & Entrepreneurship Opportunities (FSNE-2020)”</h3>
+                <p class="text-slate-500 dark:text-slate-400 mt-0.5">Department of Food Processing Technology, Sheikhpara A.R.M. Polytechnic</p>
+              </div>
+              <span class="shrink-0 px-3 py-1 rounded-full text-[11px] font-semibold bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300">5–7 August 2020</span>
+            </div>
+          </div>
+
+          <div class="pt-2 text-center">
+            <button id="toggle-ws-btn" class="px-4 py-1.5 rounded-full text-xs font-medium border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+              See all (11)
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- 9. RESEARCH & MEDIA GALLERY -->
+      <section id="gallery" class="scroll-mt-22 bg-white dark:bg-darkCard rounded-2xl p-6 sm:p-8 border border-slate-200/80 dark:border-slate-800 shadow-sm">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div>
+            <div class="text-[11px] font-semibold uppercase tracking-wider text-blue-600 dark:text-blue-400">Academic Gallery</div>
+            <h2 class="font-serif text-2xl font-bold text-slate-900 dark:text-white mt-0.5">Research & Media Gallery</h2>
+          </div>
+          <!-- Gallery Filter Pills -->
+          <div class="flex flex-wrap gap-1.5">
+            <button data-gal-filter="all" class="gal-filter-btn active px-3 py-1 rounded-full text-xs font-medium bg-slate-900 text-white dark:bg-blue-600">All Photos</button>
+            <button data-gal-filter="turmeric" class="gal-filter-btn px-3 py-1 rounded-full text-xs font-medium bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-300">Turmeric Curing</button>
+            <button data-gal-filter="industry" class="gal-filter-btn px-3 py-1 rounded-full text-xs font-medium bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-300">Industrial Training</button>
+            <button data-gal-filter="conferences" class="gal-filter-btn px-3 py-1 rounded-full text-xs font-medium bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-300">Conferences</button>
+          </div>
+        </div>
+
+        <div class="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <!-- Photo Card 1 -->
+          <div data-category="turmeric" class="gal-item rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden bg-slate-50 dark:bg-slate-800/40">
+            <div class="h-44 bg-gradient-to-br from-amber-800 to-slate-900 flex items-center justify-center text-slate-300">
+              <!-- Replace with <img src="turmeric_lab.jpg" class="w-full h-full object-cover"> -->
+              <div class="text-center p-4">
+                <i class="fa-solid fa-fire-burner text-3xl text-amber-400 mb-2"></i>
+                <div class="text-xs font-medium">Add Photo: turmeric_lab.jpg</div>
+              </div>
+            </div>
+            <div class="p-4">
+              <div class="flex items-center justify-between text-[10px]">
+                <span class="px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300 font-semibold">Research</span>
+                <span class="text-slate-400">Turmeric Curing</span>
+              </div>
+              <h3 class="font-serif font-bold text-sm text-slate-900 dark:text-white mt-2">Microwave Curing & Image Analysis</h3>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Pilot-scale microwave curing and MATLAB image processing of <em>Curcuma Longa</em> L. rhizomes.</p>
+            </div>
+          </div>
+
+          <!-- Photo Card 2 -->
+          <div data-category="industry" class="gal-item rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden bg-slate-50 dark:bg-slate-800/40">
+            <div class="h-44 bg-gradient-to-br from-teal-800 to-slate-900 flex items-center justify-center text-slate-300">
+              <!-- Replace with <img src="keventer_training.jpg" class="w-full h-full object-cover"> -->
+              <div class="text-center p-4">
+                <i class="fa-solid fa-industry text-3xl text-teal-300 mb-2"></i>
+                <div class="text-xs font-medium">Add Photo: keventer_training.jpg</div>
+              </div>
+            </div>
+            <div class="p-4">
+              <div class="flex items-center justify-between text-[10px]">
+                <span class="px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300 font-semibold">Training</span>
+                <span class="text-slate-400">Industrial Training</span>
+              </div>
+              <h3 class="font-serif font-bold text-sm text-slate-900 dark:text-white mt-2">Quality Evaluation & Processing Line</h3>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Hands-on process control and quality analysis during industrial training at Keventer Agro Ltd.</p>
+            </div>
+          </div>
+
+          <!-- Photo Card 3 -->
+          <div data-category="conferences" class="gal-item rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden bg-slate-50 dark:bg-slate-800/40">
+            <div class="h-44 bg-gradient-to-br from-blue-900 to-slate-900 flex items-center justify-center text-slate-300">
+              <!-- Replace with <img src="etsafe_poster.jpg" class="w-full h-full object-cover"> -->
+              <div class="text-center p-4">
+                <i class="fa-solid fa-person-chalkboard text-3xl text-blue-400 mb-2"></i>
+                <div class="text-xs font-medium">Add Photo: etsafe_poster.jpg</div>
+              </div>
+            </div>
+            <div class="p-4">
+              <div class="flex items-center justify-between text-[10px]">
+                <span class="px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300 font-semibold">Conference</span>
+                <span class="text-slate-400">Conferences</span>
+              </div>
+              <h3 class="font-serif font-bold text-sm text-slate-900 dark:text-white mt-2">ET-SAFe-2025 Poster & Awards</h3>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Poster presentation and 1st place design recognition at Tezpur University (Feb 2025).</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 10. ACADEMIC REFERENCES -->
+      <section id="references" class="scroll-mt-22 bg-white dark:bg-darkCard rounded-2xl p-6 sm:p-8 border border-slate-200/80 dark:border-slate-800 shadow-sm">
+        <div class="text-[11px] font-semibold uppercase tracking-wider text-blue-600 dark:text-blue-400">Endorsements</div>
+        <h2 class="font-serif text-2xl font-bold text-slate-900 dark:text-white mt-0.5">Academic References</h2>
+
+        <div class="mt-5 grid grid-cols-1 md:grid-cols-2 gap-4">
+          <!-- Ref 1 -->
+          <div class="rounded-xl border border-slate-200 dark:border-slate-700 p-5 flex flex-col justify-between">
+            <div class="flex items-center gap-3">
+              <img src="https://ui-avatars.com/api/?name=IITG+Supervisor&background=2563eb&color=fff" alt="PhD Supervisor" class="w-11 h-11 rounded-full object-cover">
+              <div>
+                <h3 class="font-serif font-bold text-sm text-slate-900 dark:text-white">Prof. [PhD Supervisor Name]</h3>
+                <div class="text-xs font-semibold text-rose-600 dark:text-rose-400">Professor</div>
+              </div>
+            </div>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-3 leading-relaxed">
+              Department of Chemical Engineering<br>
+              Indian Institute of Technology Guwahati, Assam 781039
+            </p>
+            <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs">
+              <a href="mailto:supervisor@iitg.ac.in" class="text-rose-600 dark:text-rose-400 hover:underline flex items-center gap-1.5">
+                <i class="fa-solid fa-envelope"></i> supervisor@iitg.ac.in
+              </a>
+              <span class="px-2.5 py-0.5 rounded-full text-[10px] font-medium bg-rose-50 text-rose-700 dark:bg-rose-900/30 dark:text-rose-300">PhD Supervisor</span>
+            </div>
+          </div>
+
+          <!-- Ref 2 -->
+          <div class="rounded-xl border border-slate-200 dark:border-slate-700 p-5 flex flex-col justify-between">
+            <div class="flex items-center gap-3">
+              <img src="https://ui-avatars.com/api/?name=MTech+Supervisor&background=4f46e5&color=fff" alt="MTech Supervisor" class="w-11 h-11 rounded-full object-cover">
+              <div>
+                <h3 class="font-serif font-bold text-sm text-slate-900 dark:text-white">Prof. [M.Tech Thesis Supervisor Name]</h3>
+                <div class="text-xs font-semibold text-indigo-600 dark:text-indigo-400">Professor</div>
+              </div>
+            </div>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-3 leading-relaxed">
+              Department of Food Engineering and Technology<br>
+              Tezpur University, Assam
+            </p>
+            <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs">
+              <a href="mailto:supervisor@tezu.ernet.in" class="text-indigo-600 dark:text-indigo-400 hover:underline flex items-center gap-1.5">
+                <i class="fa-solid fa-envelope"></i> supervisor@tezu.ernet.in
+              </a>
+              <span class="px-2.5 py-0.5 rounded-full text-[10px] font-medium bg-indigo-50 text-indigo-700 dark:bg-indigo-900/30 dark:text-indigo-300">M.Tech Thesis Supervisor</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 11. CONTACT ME FORM -->
+      <section id="contact" class="scroll-mt-22 bg-white dark:bg-darkCard rounded-2xl p-6 sm:p-8 border border-slate-200/80 dark:border-slate-800 shadow-sm">
+        <div class="text-[11px] font-semibold uppercase tracking-wider text-blue-600 dark:text-blue-400">Get in touch</div>
+        <h2 class="font-serif text-2xl font-bold text-slate-900 dark:text-white mt-0.5">Contact Me</h2>
+
+        <form id="contact-form" class="mt-5 rounded-xl border border-slate-200 dark:border-slate-700 p-5 sm:p-6 border-t-[3px] border-t-blue-600 space-y-4">
+          <div>
+            <label for="sender-name" class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">Your name</label>
+            <input id="sender-name" type="text" required placeholder="Dr. / Prof. / Name" class="w-full px-3.5 py-2.5 text-xs rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-blue-500">
+          </div>
+          <div>
+            <label for="sender-email" class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">Your email</label>
+            <input id="sender-email" type="email" required placeholder="name@institute.edu" class="w-full px-3.5 py-2.5 text-xs rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-blue-500">
+          </div>
+          <div>
+            <label for="sender-msg" class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">Message</label>
+            <textarea id="sender-msg" rows="4" required placeholder="Write your message regarding research collaboration, food processing, or academic inquiries..." class="w-full px-3.5 py-2.5 text-xs rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+          </div>
+          <div class="flex flex-wrap items-center justify-between gap-3 pt-1">
+            <button type="submit" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold bg-blue-600 hover:bg-blue-700 text-white shadow-sm transition">
+              <i class="fa-solid fa-paper-plane"></i> Send Message
+            </button>
+            <span class="text-xs text-slate-400">subhankar.maity@iitg.ac.in</span>
+          </div>
+        </form>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="max-w-[1380px] mx-auto px-4 sm:px-6 py-8 border-t border-slate-200/80 dark:border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 dark:text-slate-400">
+    <div>
+      <strong class="text-slate-800 dark:text-slate-200">Subhankar Maity, M.Tech</strong> • Research Scholar, Dept. of Chemical Engineering, IIT Guwahati
+    </div>
+    <div>
+      &copy; <span id="year"></span> Subhankar Maity. Hosted on GitHub Pages.
+    </div>
+  </footer>
+
+  <!-- INTERACTIVE JAVASCRIPT -->
+  <script>
+    // 1. Dynamic Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // 2. Dark Mode Toggle with LocalStorage
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+    const htmlEl = document.documentElement;
+
+    if (localStorage.getItem('theme') === 'dark') {
+      htmlEl.classList.add('dark');
+      themeIcon.classList.replace('fa-moon', 'fa-sun');
+    }
+
+    themeToggle.addEventListener('click', () => {
+      htmlEl.classList.toggle('dark');
+      const isDark = htmlEl.classList.contains('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      themeIcon.classList.toggle('fa-moon', !isDark);
+      themeIcon.classList.toggle('fa-sun', isDark);
+    });
+
+    // 3. Mobile Menu Toggle
+    document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+
+    // 4. Expandable "See all" Toggles for Education, Experience, and Workshops
+    function setupExpandToggle(btnId, containerId, defaultText) {
+      const btn = document.getElementById(btnId);
+      const container = document.getElementById(containerId);
+      if (!btn || !container) return;
+      btn.addEventListener('click', () => {
+        const isHidden = container.classList.toggle('hidden');
+        btn.textContent = isHidden ? defaultText : 'Show less';
+      });
+    }
+    setupExpandToggle('toggle-edu-btn', 'more-edu', 'See all');
+    setupExpandToggle('toggle-exp-btn', 'more-exp', 'See all');
+    setupExpandToggle('toggle-ws-btn', 'more-workshops', 'See all (11)');
+
+    // 5. ScrollSpy for Top Nav Pills
+    const sections = document.querySelectorAll('main section[id]');
+    const navPills = document.querySelectorAll('#navbar-links .nav-pill');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(sec => {
+        if (window.scrollY >= sec.offsetTop - 130) {
+          current = sec.getAttribute('id');
+        }
+      });
+      navPills.forEach(pill => {
+        pill.classList.remove('active');
+        if (pill.getAttribute('href') === `#${current}`) {
+          pill.classList.add('active');
+        }
+      });
+    });
+
+    // 6. Publications Filter & Live Search
+    const pubFilterBtns = document.querySelectorAll('.pub-filter-btn');
+    const pubItems = document.querySelectorAll('.pub-item');
+    const pubSearch = document.getElementById('pub-search');
+    let activePubFilter = 'all';
+
+    function filterPublications() {
+      const query = pubSearch.value.toLowerCase();
+      pubItems.forEach(item => {
+        const status = item.dataset.status;
+        const text = item.textContent.toLowerCase();
+        const matchesTab = activePubFilter === 'all' || status === activePubFilter;
+        const matchesQuery = text.includes(query);
+        item.style.display = (matchesTab && matchesQuery) ? 'flex' : 'none';
+      });
+    }
+
+    pubFilterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        pubFilterBtns.forEach(b => {
+          b.classList.remove('active', 'bg-slate-900', 'text-white', 'dark:bg-blue-600');
+          b.classList.add('bg-slate-100', 'text-slate-600', 'dark:bg-slate-800', 'dark:text-slate-300');
+        });
+        btn.classList.add('active', 'bg-slate-900', 'text-white', 'dark:bg-blue-600');
+        btn.classList.remove('bg-slate-100', 'text-slate-600', 'dark:bg-slate-800', 'dark:text-slate-300');
+        activePubFilter = btn.dataset.pubFilter;
+        filterPublications();
+      });
+    });
+
+    pubSearch.addEventListener('input', filterPublications);
+
+    // 7. Gallery Category Filtering
+    const galFilterBtns = document.querySelectorAll('.gal-filter-btn');
+    const galItems = document.querySelectorAll('.gal-item');
+
+    galFilterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        galFilterBtns.forEach(b => {
+          b.classList.remove('active', 'bg-slate-900', 'text-white', 'dark:bg-blue-600');
+          b.classList.add('bg-slate-100', 'text-slate-600', 'dark:bg-slate-800', 'dark:text-slate-300');
+        });
+        btn.classList.add('active', 'bg-slate-900', 'text-white', 'dark:bg-blue-600');
+        btn.classList.remove('bg-slate-100', 'text-slate-600', 'dark:bg-slate-800', 'dark:text-slate-300');
+
+        const cat = btn.dataset.galFilter;
+        galItems.forEach(item => {
+          item.style.display = (cat === 'all' || item.dataset.category === cat) ? 'block' : 'none';
+        });
+      });
+    });
+
+    // 8. Static GitHub Pages Mailto Contact Handler
+    document.getElementById('contact-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = encodeURIComponent(document.getElementById('sender-name').value);
+      const email = encodeURIComponent(document.getElementById('sender-email').value);
+      const msg = encodeURIComponent(document.getElementById('sender-msg').value);
+      window.location.href = `mailto:subhankar.maity@iitg.ac.in?subject=Portfolio%20Inquiry%20from%20${name}&body=From:%20${name}%20(${email})%0A%0A${msg}`;
+    });
+  </script>
+</body>
+</html>
