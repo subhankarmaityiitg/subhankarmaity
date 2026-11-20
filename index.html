@@ -1049,10 +1049,22 @@
     <div>
       <strong class="text-slate-800 dark:text-slate-200">Subhankar Maity</strong> • Research Scholar, Dept. of Chemical Engineering, IIT Guwahati
     </div>
+
+    <!-- Live Visitor Counter Pill -->
+    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white dark:bg-darkCard border border-slate-200/80 dark:border-slate-700 shadow-xs text-[11px] font-medium">
+      <span class="relative flex h-2 w-2">
+        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+        <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+      </span>
+      <span class="text-slate-500 dark:text-slate-400">Total Visits:</span>
+      <span id="visit-count" class="font-bold text-slate-800 dark:text-white">...</span>
+    </div>
+
     <div>
       &copy; <span id="year"></span> Subhankar Maity.
     </div>
   </footer>
+  
  <!-- CERTIFICATE / CREDENTIAL POPUP MODAL -->
   <div id="cert-modal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-slate-950/75 backdrop-blur-sm p-4" onclick="if(event.target === this) closeCertModal()">
     <div class="relative w-full max-w-2xl bg-white dark:bg-darkCard rounded-2xl border border-slate-200 dark:border-slate-700 shadow-2xl overflow-hidden animate-[fadeIn_0.15s_ease-out]">
@@ -1099,7 +1111,16 @@
   <script>
     // 1. Dynamic Year
     document.getElementById('year').textContent = new Date().getFullYear();
-
+   // Live Total Visits Counter
+    fetch('https://api.counterapi.dev/v1/subhankarmaityiitg/portfolio/up')
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById('visit-count').textContent = data.count.toLocaleString();
+      })
+      .catch(() => {
+        document.getElementById('visit-count').textContent = '1';
+      });
+    
     // 2. Dark Mode Toggle with LocalStorage
     const themeToggle = document.getElementById('theme-toggle');
     const themeIcon = document.getElementById('theme-icon');
