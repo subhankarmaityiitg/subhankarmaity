@@ -1051,13 +1051,13 @@
     </div>
 
     <!-- Live Visitor Counter Pill -->
-    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white dark:bg-darkCard border border-slate-200/80 dark:border-slate-700 shadow-xs text-[11px] font-medium">
+    <div id="busuanzi_container_site_pv" class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white dark:bg-darkCard border border-slate-200/80 dark:border-slate-700 shadow-xs text-[11px] font-medium">
       <span class="relative flex h-2 w-2">
         <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
         <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
       </span>
       <span class="text-slate-500 dark:text-slate-400">Total Visits:</span>
-      <span id="visit-count" class="font-bold text-slate-800 dark:text-white">...</span>
+      <span id="busuanzi_value_site_pv" class="font-bold text-slate-800 dark:text-white">...</span>
     </div>
 
     <div>
@@ -1112,7 +1112,7 @@
     // 1. Dynamic Year
     document.getElementById('year').textContent = new Date().getFullYear();
    // Live Total Visits Counter
-    fetch('https://api.counterapi.dev/v1/subhankarmaityiitg/portfolio/up')
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
       .then(res => res.json())
       .then(data => {
         document.getElementById('visit-count').textContent = data.count.toLocaleString();
