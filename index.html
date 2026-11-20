@@ -58,16 +58,33 @@
       color: #ffffff;
     }
   
-  /* Smooth Fade Mask for Auto-Scrolling Updates */
+  /* Continuous Seamless Vertical Marquee for Recent Updates */
+    @keyframes scrollUpdates {
+      0% {
+        transform: translate3d(0, 0, 0);
+      }
+      100% {
+        transform: translate3d(0, -50%, 0);
+      }
+    }
+
     .updates-viewport {
-      height: 185px;
+      height: 190px;
       overflow: hidden;
       position: relative;
       mask-image: linear-gradient(to bottom, transparent 0%, black 12%, black 88%, transparent 100%);
       -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 12%, black 88%, transparent 100%);
     }
-    .updates-track {
-      transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+
+    .updates-marquee {
+      display: flex;
+      flex-direction: column;
+      will-change: transform;
+      animation: scrollUpdates 22s linear infinite;
+    }
+
+    .updates-viewport:hover .updates-marquee {
+      animation-play-state: paused;
     }
   
   </style>
@@ -699,32 +716,33 @@
 
           <div class="text-[11px] font-medium text-slate-400 mb-2">Update...</div>
 
-          <!-- Auto-Scrolling Viewport -->
+          <!-- Continuous Smooth Auto-Scrolling Viewport -->
           <div id="updates-viewport" class="updates-viewport">
-            <div id="updates-track" class="updates-track space-y-3.5 text-xs py-1">
-              <div class="update-row flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-6">
-                <span class="w-28 shrink-0 font-semibold text-amber-600 dark:text-amber-400">March 2026</span>
-                <span class="text-slate-700 dark:text-slate-200">Attended One-Day Workshop on “Dynamic Light Scattering (DLS)” organized by Jyoti and Bhupat Mehta School of Health Sciences and Technology, IIT Guwahati.</span>
-              </div>
-              <div class="update-row flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-6">
-                <span class="w-28 shrink-0 font-semibold text-amber-600 dark:text-amber-400">2026</span>
-                <span class="text-slate-700 dark:text-slate-200">Published Springer book chapter <em>“Process Control and Operations for Microfluidization”</em> in <em>Fundamentals and Application of Microfluidization in Food Processing</em>.</span>
-              </div>
-              <div class="update-row flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-6">
-                <span class="w-28 shrink-0 font-semibold text-amber-600 dark:text-amber-400">February 2025</span>
-                <span class="text-slate-700 dark:text-slate-200">Presented poster on microwave vs. conventional turmeric curing via image processing and won 1st place in Logo/Souvenir/Banner design + Runner-up in Quiz at ET-SAFe-2025, Tezpur University.</span>
-              </div>
-              <div class="update-row flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-6">
-                <span class="w-28 shrink-0 font-semibold text-amber-600 dark:text-amber-400">2024</span>
-                <span class="text-slate-700 dark:text-slate-200">Qualified GATE-2024 in Life Science (XL) with a score of 504.</span>
-              </div>
-              <div class="update-row flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-6">
-                <span class="w-28 shrink-0 font-semibold text-amber-600 dark:text-amber-400">2022</span>
-                <span class="text-slate-700 dark:text-slate-200">Attended International Conference on Emerging Technologies in Food Processing-II (ETFP-II 2022) organized by Dept. of Food Processing Technology, GKCIET Malda.</span>
+            <div id="updates-marquee" class="updates-marquee text-xs">
+              <div id="updates-list" class="flex flex-col gap-3.5 pb-3.5">
+                <div class="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-6">
+                  <span class="w-28 shrink-0 font-semibold text-amber-600 dark:text-amber-400">March 2026</span>
+                  <span class="text-slate-700 dark:text-slate-200">Attended One-Day Workshop on “Dynamic Light Scattering (DLS)” organized by Jyoti and Bhupat Mehta School of Health Sciences and Technology, IIT Guwahati.</span>
+                </div>
+                <div class="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-6">
+                  <span class="w-28 shrink-0 font-semibold text-amber-600 dark:text-amber-400">2026</span>
+                  <span class="text-slate-700 dark:text-slate-200">Published Springer book chapter <em>“Process Control and Operations for Microfluidization”</em> in <em>Fundamentals and Application of Microfluidization in Food Processing</em>.</span>
+                </div>
+                <div class="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-6">
+                  <span class="w-28 shrink-0 font-semibold text-amber-600 dark:text-amber-400">February 2025</span>
+                  <span class="text-slate-700 dark:text-slate-200">Presented poster on microwave vs. conventional turmeric curing via image processing and won 1st place in Logo/Souvenir/Banner design + Runner-up in Quiz at ET-SAFe-2025, Tezpur University.</span>
+                </div>
+                <div class="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-6">
+                  <span class="w-28 shrink-0 font-semibold text-amber-600 dark:text-amber-400">2024</span>
+                  <span class="text-slate-700 dark:text-slate-200">Qualified GATE-2024 in Life Science (XL) with a score of 504.</span>
+                </div>
+                <div class="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-6">
+                  <span class="w-28 shrink-0 font-semibold text-amber-600 dark:text-amber-400">2022</span>
+                  <span class="text-slate-700 dark:text-slate-200">Attended International Conference on Emerging Technologies in Food Processing-II (ETFP-II 2022) organized by Dept. of Food Processing Technology, GKCIET Malda.</span>
+                </div>
               </div>
             </div>
           </div>
-        </div>
       </section>
       
       <!-- 7. AWARDS, ACHIEVEMENTS & FELLOWSHIPS -->
@@ -1253,32 +1271,13 @@
       window.location.href = `mailto:subhankar.maity@iitg.ac.in?subject=Portfolio%20Inquiry%20from%20${name}&body=From:%20${name}%20(${email})%0A%0A${msg}`;
     });
 
-// 9. Auto-Scrolling Recent Updates Ticker (Step-by-Step with Hover Pause)
+// 9. Seamless Infinite Loop Clone for Recent Updates
     (function () {
-      const viewport = document.getElementById('updates-viewport');
-      const track = document.getElementById('updates-track');
-      if (!viewport || !track) return;
-
-      let paused = false;
-      viewport.addEventListener('mouseenter', () => { paused = true; });
-      viewport.addEventListener('mouseleave', () => { paused = false; });
-
-      setInterval(() => {
-        if (paused) return;
-        const firstRow = track.querySelector('.update-row');
-        if (!firstRow) return;
-
-        // Calculate exact height of first row + vertical gap (14px)
-        const shift = firstRow.offsetHeight + 14;
-        track.style.transition = 'transform 0.65s cubic-bezier(0.22, 1, 0.36, 1)';
-        track.style.transform = `translateY(-${shift}px)`;
-
-        setTimeout(() => {
-          track.style.transition = 'none';
-          track.appendChild(firstRow);
-          track.style.transform = 'translateY(0)';
-        }, 680);
-      }, 3000);
+      const marquee = document.getElementById('updates-marquee');
+      const list = document.getElementById('updates-list');
+      if (marquee && list) {
+        marquee.appendChild(list.cloneNode(true));
+      }
     })();
     
   </script>
