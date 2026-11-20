@@ -1111,16 +1111,7 @@
   <script>
     // 1. Dynamic Year
     document.getElementById('year').textContent = new Date().getFullYear();
-   // Live Total Visits Counter
-    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-      .then(res => res.json())
-      .then(data => {
-        document.getElementById('visit-count').textContent = data.count.toLocaleString();
-      })
-      .catch(() => {
-        document.getElementById('visit-count').textContent = '1';
-      });
-    
+
     // 2. Dark Mode Toggle with LocalStorage
     const themeToggle = document.getElementById('theme-toggle');
     const themeIcon = document.getElementById('theme-icon');
@@ -1238,5 +1229,8 @@
       window.location.href = `mailto:subhankar.maity@iitg.ac.in?subject=Portfolio%20Inquiry%20from%20${name}&body=From:%20${name}%20(${email})%0A%0A${msg}`;
     });
   </script>
+
+  <!-- Live Visitor Counter Script -->
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 </body>
 </html>
